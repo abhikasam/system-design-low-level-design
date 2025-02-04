@@ -1,4 +1,6 @@
 package models;
 
-public interface Vehicle {
+public abstract class Vehicle {
+    int id;
+    VehicleType vehicleType;
 }
