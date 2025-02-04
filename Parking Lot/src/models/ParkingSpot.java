@@ -1,11 +1,14 @@
 package models;
 
-public class ParkingSpot {
+public abstract class ParkingSpot {
     int id;
     boolean isEmpty;
     Vehicle vehicle;
     Ticket ticket;
     int price;
+
+    public ParkingSpot() {
+    }
 
     public int getId() {
         return id;
@@ -43,7 +46,5 @@ public class ParkingSpot {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+    public abstract void setPrice();
 }
