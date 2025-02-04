@@ -6,7 +6,18 @@ package models;
 
 public class ExitGate {
 
-    void generateBill(){}
-    void releaseVehicle(){}
+    private final ParkingLot parkingLot;
+    private final ParkingChargeStrategy parkingChargeStrategy;
 
+    public ExitGate(ParkingLot parkingLot, ParkingChargeStrategy parkingChargeStrategy) {
+        this.parkingLot = parkingLot;
+        this.parkingChargeStrategy = parkingChargeStrategy;
+    }
+
+    double generateBill(Ticket ticket){
+        return parkingChargeStrategy.generateBill(ticket);
+    }
+    void releaseVehicle(Vehicle vehicle){
+        parkingLot.releaseVehicle(vehicle);
+    }
 }

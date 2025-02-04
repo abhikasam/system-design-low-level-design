@@ -1,7 +1,8 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
 ///
 /// in the parking lot, we have to check if any available spot for any vehicle type.
@@ -10,7 +11,13 @@ import java.util.Map;
 ///
 
 public class ParkingLot {
-    List<ParkingSpot> area;
+    private final List<ParkingSpot> area;
+    private final ParkingStrategy parkingStrategy;
+
+    public ParkingLot(ParkingStrategy parkingStrategy) {
+        this.area=new ArrayList<>();
+        this.parkingStrategy = parkingStrategy;
+    }
 
     void addParkingSpot(ParkingSpot parkingSpot){
         area.add(parkingSpot);
@@ -20,11 +27,13 @@ public class ParkingLot {
         area.remove(parkingSpot);
     }
 
-    boolean findSpot(VehicleType vehicleType){
-        return true;
+     Optional<ParkingSpot> findParkingSpot(VehicleType vehicleType){
+        return parkingStrategy.findParkingSpot(area,vehicleType);
     }
 
     Ticket allotSpot(Vehicle vehicle){
         return new Ticket();
     }
+
+    public void releaseVehicle(Vehicle vehicle) {}
 }

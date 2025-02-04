@@ -1,13 +1,16 @@
 package models;
 
-import java.time.LocalDateTime;
+public class Bill {
+    int id;
+    Vehicle vehicle;
+    int duration;
+    ParkingSpot parkingSpot;
 
-public class Ticket {
-    private int id;
-    private Vehicle vehicle;
-    private LocalDateTime entryTime;
-    private ParkingSpot parkingSpot;
-    public Ticket() {
+    public Bill(int id, Vehicle vehicle, int duration, ParkingSpot parkingSpot) {
+        this.id = id;
+        this.vehicle = vehicle;
+        this.duration = duration;
+        this.parkingSpot = parkingSpot;
     }
 
     public int getId() {
@@ -26,12 +29,12 @@ public class Ticket {
         this.vehicle = vehicle;
     }
 
-    public LocalDateTime getEntryTime() {
-        return entryTime;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setEntryTime(LocalDateTime entryTime) {
-        this.entryTime = entryTime;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public ParkingSpot getParkingSpot() {
