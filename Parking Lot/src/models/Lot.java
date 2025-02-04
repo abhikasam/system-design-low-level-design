@@ -1,6 +1,9 @@
 package models;
 
 public class Lot {
-    public Lot() {
-    }
+    Vehicle vehicle;
+    int price;
+
+    void parkVehicle(){}
+    void unparkVehicle(){}
 }
