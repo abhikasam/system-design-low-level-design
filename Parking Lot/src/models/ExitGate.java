@@ -14,7 +14,7 @@ public class ExitGate {
         this.parkingChargeStrategy = parkingChargeStrategy;
     }
 
-    double generateBill(Ticket ticket){
+    Bill generateBill(Ticket ticket){
         return parkingChargeStrategy.generateBill(ticket);
     }
     void releaseVehicle(Vehicle vehicle){

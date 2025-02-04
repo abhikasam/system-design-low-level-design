@@ -3,10 +3,11 @@ package models;
 public class Bill {
     int id;
     Vehicle vehicle;
-    int duration;
+    long duration;
     ParkingSpot parkingSpot;
+    long price;
 
-    public Bill(int id, Vehicle vehicle, int duration, ParkingSpot parkingSpot) {
+    public Bill(int id, Vehicle vehicle, long duration, ParkingSpot parkingSpot) {
         this.id = id;
         this.vehicle = vehicle;
         this.duration = duration;
@@ -29,7 +30,7 @@ public class Bill {
         this.vehicle = vehicle;
     }
 
-    public int getDuration() {
+    public long getDuration() {
         return duration;
     }
 
@@ -43,5 +44,13 @@ public class Bill {
 
     public void setParkingSpot(ParkingSpot parkingSpot) {
         this.parkingSpot = parkingSpot;
+    }
+
+    public long getPrice() {
+        return this.duration*this.parkingSpot.getPrice();
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
     }
 }
