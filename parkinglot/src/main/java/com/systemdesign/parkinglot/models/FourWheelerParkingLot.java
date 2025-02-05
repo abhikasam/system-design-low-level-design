@@ -1,9 +1,10 @@
 package com.systemdesign.parkinglot.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FourWheelerParkingLot extends ParkingLot{
-    public FourWheelerParkingLot(List<ParkingSpot> parkingSpots) {
-        super(parkingSpots);
+    public FourWheelerParkingLot(ParkingStrategy parkingStrategy) {
+        super(new ArrayList<>(),parkingStrategy);
     }
 }
