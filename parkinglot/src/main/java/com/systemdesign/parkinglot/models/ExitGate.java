@@ -2,6 +2,7 @@ package com.systemdesign.parkinglot.models;
 
 public class ExitGate {
     ParkingCharge parkingCharge;
+    ParkingLot parkingLot;
 
     public ExitGate(ParkingCharge parkingCharge) {
         this.parkingCharge = parkingCharge;
@@ -11,5 +12,7 @@ public class ExitGate {
         return parkingCharge.calcuateBill(ticket);
     }
     void payBill(Ticket ticket){}
-    void releaseVehicle(ParkingSpot parkingSpot){}
+    void releaseVehicle(Vehicle vehicle){
+        parkingLot.releaseVehicle(vehicle);
+    }
 }
