@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class NearestToExitParkingStrategy implements ParkingStrategy{
     @Override
-    public Optional<ParkingSpot> findParkingSpot(List<ParkingSpot> parkingSpots, VehicleType vehicleType) {
+    public Optional<ParkingSpot> findParkingSpace(List<ParkingSpot> parkingSpots, VehicleType vehicleType) {
         return parkingSpots.stream().sorted(Comparator.comparing(i-> true).reversed()).findFirst();
     }
 }

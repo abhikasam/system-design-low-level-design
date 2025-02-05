@@ -27,8 +27,8 @@ public class ParkingLot {
         area.remove(parkingSpot);
     }
 
-     Optional<ParkingSpot> findParkingSpot(VehicleType vehicleType){
-        return parkingStrategy.findParkingSpot(area,vehicleType);
+     Optional<ParkingSpot> findParkingSpace(VehicleType vehicleType){
+        return parkingStrategy.findParkingSpace(area,vehicleType);
     }
 
     Ticket allotSpot(Vehicle vehicle){

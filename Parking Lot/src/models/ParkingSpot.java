@@ -6,7 +6,12 @@ public abstract class ParkingSpot {
     private Ticket ticket;
     private boolean isEmpty;
 
-    public ParkingSpot() {
+    private ParkingSpotType parkingSpotType;
+    protected int price;
+
+    public ParkingSpot(ParkingSpotType parkingSpotType, int price) {
+        this.parkingSpotType = parkingSpotType;
+        this.price = price;
     }
 
     public int getId() {
@@ -41,5 +46,16 @@ public abstract class ParkingSpot {
         this.ticket = ticket;
     }
 
-    public abstract int getPrice();
+    public int getPrice(){
+        return this.price;
+    }
+    protected abstract void setPrice();
+
+    public ParkingSpotType getParkingSpotType() {
+        return parkingSpotType;
+    }
+
+    public void setParkingSpotType(ParkingSpotType parkingSpotType) {
+        this.parkingSpotType = parkingSpotType;
+    }
 }

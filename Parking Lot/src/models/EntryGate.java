@@ -13,8 +13,8 @@ public class EntryGate {
         this.parkingLot = parkingLot;
     }
 
-    Optional<ParkingSpot> findParkingSpot(Vehicle vehicle){
-        return parkingLot.findParkingSpot(vehicle.getVehicleType());
+    Optional<ParkingSpot> findParkingSpace(Vehicle vehicle){
+        return parkingLot.findParkingSpace(vehicle.getVehicleType());
     }
 
 
